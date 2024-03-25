@@ -1,15 +1,9 @@
 package com.dartbones.bars_test_server.model.entity;
 
-import lombok.*;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
 
-@Getter
-@Setter
-@NoArgsConstructor
 @Entity(name = "documents")
-@EqualsAndHashCode(of = {"recId", "number"})
 public class DocumentEntity {
 
     @Id
@@ -30,6 +24,40 @@ public class DocumentEntity {
 
     @Column(name = "update_date")
     private LocalDateTime updateDateTime;
+
+    public DocumentEntity() {}
+
+    public String getRecId() {
+        return recId;
+    }
+
+    public void setRecId(String recId) {
+        this.recId = recId;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public void setNumber(Integer number) {
+        this.number = number;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
+
+    public LocalDateTime getUpdateDateTime() {
+        return updateDateTime;
+    }
+
+    public void setUpdateDateTime(LocalDateTime updateDateTime) {
+        this.updateDateTime = updateDateTime;
+    }
 
     @PrePersist
     void onCreate() {
